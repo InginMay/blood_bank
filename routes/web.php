@@ -20,3 +20,7 @@ Route::get('/dashboard',function(){
 });
 
 Route::resource('donors','DonorController');
+
+Route::resource('blood_types','Blood_typeController');
+
+Route::resource('townships','TownshipController');
