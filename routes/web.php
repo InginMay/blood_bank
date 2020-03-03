@@ -24,4 +24,16 @@ Route::resource('donors','DonorController');
 Route::resource('blood_types','Blood_typeController');
 
 Route::resource('townships','TownshipController');
-Route::resource('alld','aldld');
+Route::resource('bookings','BookingController');
+
+Route::resource('donated','DonatedController');
+
+Route::get('/','FrontendController@main')->name('main');
+
+Route::get('about','FrontendController@About')->name('about');
+
+Route::get('contact','FrontendController@Contact')->name('contact');
+
+Route::get('signin','FrontendController@Signin')->name('signin');
+
+Route::get('signup','FrontendController@Signup')->name('signup');
