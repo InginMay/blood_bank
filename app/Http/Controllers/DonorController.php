@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Donor;
+use App\Blood_type;
+use App\Township;
 
 class DonorController extends Controller
 {
@@ -25,9 +27,9 @@ class DonorController extends Controller
      */
     public function create()
     {
-        $blood = Blood_Type::all();
-        $township = Township::all();
-        return view('backend.donors.create',compact('blood','township'));
+        $blood_types = Blood_type::all();
+        $townships = Township::all();
+        return view('backend.donors.create',compact('blood_types','townships'));
     }
 
     /**
@@ -51,18 +53,18 @@ class DonorController extends Controller
         ]);
 
         // store data //4
-        $batch = new Batch;
-        $batch->name = request('name');
-        $batch->email = request('email');
-        $batch->phone = request('phone');
-        $batch->nrc = request('nrc');
-        $batch->address = request('address');
-        $batch->blood_type_id = request('blood_type_id');
-        $batch->gender = request('gender');
-        $batch->dob = request('dob');
-        $batch->township_id = request('township_id');
+        $donor = new Donors;
+        $donor->name = request('name');
+        $donor->email = request('email');
+        $donor->phone = request('phone');
+        $donor->nrc = request('nrc');
+        $donor->address = request('address');
+        $donor->blood_type_id = request('blood_type_id');
+        $donor->gender = request('gender');
+        $donor->dob = request('dob');
+        $donor->township_id = request('township_id');
 
-        $batch->save();
+        $donor->save();
 
         //return redrite
         return redirect()->route('donors.index');
@@ -100,7 +102,34 @@ class DonorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            "name" => 'required|min:5|max:191',
+            "email" => 'required',
+            "phone" => 'required|max:11',
+            "nrc" => 'required',
+            "address" => 'required',
+            "blood_type_id" => 'required',
+            "gender" => 'required',
+            "dob" => 'required',
+            "township_id" => 'required'
+        ]);
+
+        // store data //4
+        $donor = Donor::find($id);
+        $donor->name = request('name');
+        $donor->email = request('email');
+        $donor->phone = request('phone');
+        $donor->nrc = request('nrc');
+        $donor->address = request('address');
+        $donor->blood_type_id = request('blood_type_id');
+        $donor->gender = request('gender');
+        $donor->dob = request('dob');
+        $donor->township_id = request('township_id');
+
+        $donor->save();
+
+        //return redrite
+        return redirect()->route('donors.index');
     }
 
     /**
