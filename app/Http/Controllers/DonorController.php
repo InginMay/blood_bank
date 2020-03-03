@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Donor;
 use App\Blood_type;
 use App\Township;
+use App\User;
 
 class DonorController extends Controller
 {
@@ -43,32 +44,47 @@ class DonorController extends Controller
         $request->validate([
             "name" => 'required|min:5|max:191',
             "email" => 'required',
-            "phone" => 'required|max:11',
+            "phone" => 'required',
+            "dob" => 'required',
             "nrc" => 'required',
             "address" => 'required',
-            "blood_type_id" => 'required',
-            "gender" => 'required',
-            "dob" => 'required',
-            "township_id" => 'required'
+            "township_id" => 'required',
+            "gender" => 'required'
         ]);
 
-        // store data //4
-        $donor = new Donors;
-        $donor->name = request('name');
-        $donor->email = request('email');
-        $donor->phone = request('phone');
-        $donor->nrc = request('nrc');
-        $donor->address = request('address');
-        $donor->blood_type_id = request('blood_type_id');
-        $donor->gender = request('gender');
-        $donor->dob = request('dob');
-        $donor->township_id = request('township_id');
+        $nrc = request('nrc');
+        if (preg_match("/^[1-9]{1,2}\/(([A-Z]|[a-z]){1}([A-Z]|[a-z]){0,2}){3}\b((\(Na\))|(\(Naing\)))[0-9]{6}$/", $nrc)) {
+            
+            // store data //4
+            $user = new User;
+            $user->name = request('name');
+            $user->email = request('email');
+            $user->password=request('password');
+            $user->save();
 
-        $donor->save();
+            $u_id = $user->id;
+            $donor = new Donor;
+            $donor->user_id=$u_id;
+            $donor->phone = request('phone');
+            $donor->dob = request('dob');
+            $donor->nrc = request('nrc');
+            $donor->address = request('address');
+            $donor->blood_type_id = request('blood_type_id');
+            $donor->township_id = request('township_id');
+            $donor->gender = request('gender');
 
-        //return redrite
-        return redirect()->route('donors.index');
+            $donor->save();
+
+            //return redrite
+            return redirect()->route('donors.index');
+        }
+        else
+        { 
+            return Redirect::back()->withErrors($nrc);
+        }
     }
+
+    
 
     /**
      * Display the specified resource.
@@ -77,8 +93,9 @@ class DonorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        return view('backend.donors.create');
+    {   
+        $donor = Donor::where('id',$id)->with('user')->with('bloodtype')->with('townships')->first();
+        return response()->json($donor);
     }
 
     /**
@@ -90,7 +107,9 @@ class DonorController extends Controller
     public function edit($id)
     {
         $donor = Donor::findOrFail($id);
-        return view('backend.donors.edit',compact('donor'));
+        $blood_types = Blood_type::all();
+        $townships = Township::all();
+        return view('backend.donors.edit',compact('donor','blood_types','townships'));
     }
 
     /**
@@ -105,26 +124,32 @@ class DonorController extends Controller
         $request->validate([
             "name" => 'required|min:5|max:191',
             "email" => 'required',
-            "phone" => 'required|max:11',
+            "phone" => 'required',
+            "dob" => 'required',
             "nrc" => 'required',
             "address" => 'required',
             "blood_type_id" => 'required',
-            "gender" => 'required',
-            "dob" => 'required',
-            "township_id" => 'required'
+            "township_id" => 'required',
+            "gender" => 'required'
         ]);
 
         // store data //4
+        $user = new User;
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password=request('password');
+        $user->save();
+
+        $u_id = $user->id;
         $donor = Donor::find($id);
-        $donor->name = request('name');
-        $donor->email = request('email');
+        $donor->user_id=$u_id;
         $donor->phone = request('phone');
+        $donor->dob = request('dob');
         $donor->nrc = request('nrc');
         $donor->address = request('address');
         $donor->blood_type_id = request('blood_type_id');
-        $donor->gender = request('gender');
-        $donor->dob = request('dob');
         $donor->township_id = request('township_id');
+        $donor->gender = request('gender');
 
         $donor->save();
 

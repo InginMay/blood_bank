@@ -4,7 +4,7 @@
 	<h2>Township Create Form</h2>
 	<div class="row">
 		<div class="col-12">
-			<form method="post" action="{{route('townships.store')}}" enctype="multipart/form-data">
+			<form method="post" action="{{route('townships.store')}}" >
 				@csrf
 			  <div class="form-group row">
 			    <label for="inputName" class="col-sm-2 col-form-label">Name</label>

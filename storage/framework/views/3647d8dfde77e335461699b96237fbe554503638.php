@@ -12,11 +12,11 @@
   <title>Blood Donation</title>
 
   <!-- Custom fonts for this template-->
-  <link href="{{asset('sb_admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('sb_admin/vendor/fontawesome-free/css/all.min.css')); ?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{{asset('sb_admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+  <link href="<?php echo e(asset('sb_admin/css/sb-admin-2.min.css')); ?>" rel="stylesheet">
 
 </head>
 
@@ -31,7 +31,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="{{asset('image/img.gif')}}" style="width: 100px;height: 70px;">
+          <img src="<?php echo e(asset('image/img.gif')); ?>" style="width: 100px;height: 70px;">
         </div>
         <div class="sidebar-brand-text mx-3">Blood Donation</div>
       </a>
@@ -78,8 +78,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Info:</h6>
-            <a class="collapse-item" href="{{route('donors.index')}}">Index</a>
-            <a class="collapse-item" href="{{route('donors.create')}}">Create</a>
+            <a class="collapse-item" href="<?php echo e(route('donors.index')); ?>">Index</a>
+            <a class="collapse-item" href="<?php echo e(route('donors.create')); ?>">Create</a>
           </div>
         </div>
       </li>
@@ -336,7 +336,7 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
         <!-- /.container-fluid -->
 
       </div>
@@ -383,22 +383,23 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="{{asset('sb_admin/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('sb_admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="<?php echo e(asset('sb_admin/vendor/jquery/jquery.min.js')); ?>"></script>
+  <script src="<?php echo e(asset('sb_admin/vendor/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="{{asset('sb_admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="<?php echo e(asset('sb_admin/vendor/jquery-easing/jquery.easing.min.js')); ?>"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{{asset('sb_admin/js/sb-admin-2.min.js')}}"></script>
+  <script src="<?php echo e(asset('sb_admin/js/sb-admin-2.min.js')); ?>"></script>
 
   <!-- Page level plugins -->
-  <script src="{{asset('sb_admin/vendor/chart.js/Chart.min.js')}}"></script>
+  <script src="<?php echo e(asset('sb_admin/vendor/chart.js/Chart.min.js')); ?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="{{asset('sb_admin/js/demo/chart-area-demo.js')}}"></script>
-  <script src="{{asset('sb_admin/js/demo/chart-pie-demo.js')}}"></script>
-@yield('script')
+  <script src="<?php echo e(asset('sb_admin/js/demo/chart-area-demo.js')); ?>"></script>
+  <script src="<?php echo e(asset('sb_admin/js/demo/chart-pie-demo.js')); ?>"></script>
+<?php echo $__env->yieldContent('script'); ?>
 </body>
 
 </html>
+<?php /**PATH /opt/lampp/htdocs/blood_donation/resources/views/backendtemplate.blade.php ENDPATH**/ ?>
