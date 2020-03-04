@@ -3,7 +3,7 @@
 	<h2>Donor Edit Form</h2>
 	<div class="row">
 		<div class="col-12">
-			<form action="<?php echo e(route('donors.update',$donor->id)); ?>" method="post">
+			<form action="<?php echo e(route('donors.update',$donor->user->id)); ?>" method="post">
 			<?php echo csrf_field(); ?>
 			<?php echo method_field('PUT'); ?>
 			  <div class="form-group row <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
@@ -75,7 +75,10 @@
 			  <div class="form-group row <?php echo e($errors->has('address') ? ' has-error' : ''); ?>">
 			    <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
 			    <div class="col-sm-10">
-			      <textarea type="Address" class="form-control" name="address" id="inputAddress" value="<?php echo e($donor->address); ?>" placeholder="Address...."></textarea>
+			      <textarea type="Address" class="form-control" name="address" id="inputAddress" placeholder="Address....">
+			      	<?php echo e($donor->address); ?>
+
+			      </textarea>
 			      	<?php if($errors->has('address')): ?>
 			      	<div class="alert alert-danger">
 		                <span class="help-block"><strong><?php echo e($errors->first('address')); ?></strong></span>
@@ -126,9 +129,12 @@ unset($__errorArgs, $__bag); ?>" name="township_id">
 			  <div class="form-group row <?php echo e($errors->has('gender') ? ' has-error' : ''); ?>">
                 <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
                 <div class="col-sm-10">
-	                <input type="radio" name="gender" id="inputGender" value="male <?php echo e($donor->gender); ?>">
+
+	                <input type="radio" name="gender" id="inputGender" value="male" <?php echo e(old('type', $donor->gender) === 'male' ? 'checked' : ''); ?>>
 	                <label for="male">Male</label>
-	                <input type="radio" name="gender" id="inputGender" value="female <?php echo e($donor->gender); ?>">
+
+	                <input type="radio" name="gender" id="inputGender" value="female"  <?php echo e(old('type', $donor->gender) === 'female' ? 'checked' : ''); ?>>
+
 	                <label for="female">Female</label>
 	                <?php if($errors->has('gender')): ?>
 			      	<div class="alert alert-danger">
@@ -139,7 +145,7 @@ unset($__errorArgs, $__bag); ?>" name="township_id">
 			  </div>
 			  <div class="form-group row">
 			    <div class="col-sm-10">
-			      <button type="submit" class="btn btn-danger">Save</button>
+			      <button type="submit" class="btn btn-danger">Update</button>
 			    </div>
 			  </div>
 			</form>

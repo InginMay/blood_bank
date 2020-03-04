@@ -44,12 +44,22 @@
           <li class="nav-item px-3">
             <a class="nav-link" href="<?php echo e(route('contact')); ?>">Contact</a>
           </li>
+          <?php if(Auth::user()): ?>
+
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo e(route('signin')); ?>"><?php echo e(Auth::user()->name); ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo e(route('signin')); ?>">Booking</a>
+          </li>
+          <?php else: ?>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo e(route('signin')); ?>">SignIn</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo e(route('signup')); ?>">SignUp</a>
           </li>
+          <?php endif; ?>
         </ul>
       </div>
     </nav>

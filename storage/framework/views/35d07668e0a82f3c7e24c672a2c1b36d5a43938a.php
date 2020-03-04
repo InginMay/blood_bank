@@ -3,32 +3,32 @@
 <head>
   <!-- <style>
   #heart  {
-  background-image: url("{{asset('blood/images/ww.gif')}}");
+  background-image: url("<?php echo e(asset('blood/images/ww.gif')); ?>");
   background-color: #cccccc;
 }
 </style> -->
 <!-- </head> -->
 
 	<title>Blood Donate</title>
-	<link rel="stylesheet" type="text/css" href="{{asset('blood/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('blood/style.css')); ?>">
 
-	<link rel="stylesheet" type="text/css" href="{{asset('blood/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('blood/css/bootstrap.min.css')); ?>">
 
-  <link rel="stylesheet" type="text/css" href="{{asset('blood/fontawesome/css/all.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('blood/fontawesome/css/all.min.css')); ?>">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpg" href="{{asset('blood/images/hh.jpg')}}" sizes="16x16">
+  <link rel="icon" type="image/jpg" href="<?php echo e(asset('blood/images/hh.jpg')); ?>" sizes="16x16">
 	
-	<script type="text/javascript" src="{{asset('blood/js/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="<?php echo e(asset('blood/js/jquery.min.js')); ?>"></script>
 	
-	<script type="text/javascript" src="{{asset('blood/js/bootstrap.bundle.min.js')}}"></script>
+	<script type="text/javascript" src="<?php echo e(asset('blood/js/bootstrap.bundle.min.js')); ?>"></script>
 	 </head>
 <body>
     
 		<div class="blood">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;">
       <a class="navbar-brand" href="#">
-        <img src="{{asset('blood/images/logo.gif')}}" style="width: 170px;height: 50px;">
+        <img src="<?php echo e(asset('blood/images/logo.gif')); ?>" style="width: 170px;height: 50px;">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,30 +36,20 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active px-3">
-            <a class="nav-link" href="{{route('main')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?php echo e(route('main')); ?>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="{{route('about')}}">About</a>
+            <a class="nav-link" href="<?php echo e(route('about')); ?>">About</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="{{route('contact')}}">Contact</a>
-          </li>
-          @if(Auth::user())
-
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('signin')}}">{{Auth::user()->name}}</a>
+            <a class="nav-link" href="<?php echo e(route('contact')); ?>">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('signin')}}">Booking</a>
-          </li>
-          @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('signin')}}">SignIn</a>
+            <a class="nav-link" href="<?php echo e(route('signin')); ?>">SignIn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('signup')}}">SignUp</a>
+            <a class="nav-link" href="<?php echo e(route('signup')); ?>">SignUp</a>
           </li>
-          @endif
         </ul>
       </div>
     </nav>
@@ -67,13 +57,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <img src="{{asset('blood/images/home3.jpg')}}" style="width: 100%;height: 500px;">
+        <img src="<?php echo e(asset('blood/images/home3.jpg')); ?>" style="width: 100%;height: 500px;">
       </div>
     </div>
   </div>
 
 
-  @yield('content')
+  <?php echo $__env->yieldContent('content'); ?>
 
 
 
@@ -127,7 +117,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="{{route('main')}}"> BloodDonation.com</a>
+    <a href="<?php echo e(route('main')); ?>"> BloodDonation.com</a>
   </div>
   <!-- Copyright -->
 
@@ -135,4 +125,4 @@
 <!-- Footer -->
 
 </body>
-</html>
+</html><?php /**PATH /opt/lampp/htdocs/blood_donation/resources/views/frontendtemplate.blade.php ENDPATH**/ ?>

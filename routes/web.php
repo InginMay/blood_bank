@@ -17,17 +17,17 @@ Route::get('/', function () {
 
 Route::get('/dashboard',function(){
 	return view('backend.dashboard');
-});
+})->name('backend')->middleware('Admin');
 
-Route::resource('donors','DonorController');
+Route::resource('donors','DonorController')->middleware('Admin');
 
-Route::resource('blood_types','Blood_typeController');
+Route::resource('blood_types','Blood_typeController')->middleware('Admin');
 
-Route::resource('townships','TownshipController');
+Route::resource('townships','TownshipController')->middleware('Admin');
 
-Route::resource('bookings','BookingController');
+Route::resource('bookings','BookingController')->middleware('Admin');
 
-Route::resource('donated','DonatedController');
+Route::resource('donated','DonatedController')->middleware('Admin');
 
 Route::get('/','FrontendController@main')->name('main');
 

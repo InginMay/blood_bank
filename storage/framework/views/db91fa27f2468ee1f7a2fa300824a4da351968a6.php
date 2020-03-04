@@ -4,7 +4,9 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			
+			<?php $__currentLoopData = $bookings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			<label>Name : <?php echo e($row->donor->user->name); ?></label>
+			<br>
 			Date : <?php echo e($booking->date); ?>
 
 		</div>

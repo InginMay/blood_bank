@@ -18,6 +18,12 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo e(asset('sb_admin/css/sb-admin-2.min.css')); ?>" rel="stylesheet">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="<?php echo e(asset('blood/images/hh.jpg')); ?>" sizes="16x16">
+
+  <!-- Custom styles for this page -->
+  <link href="<?php echo e(asset('sb_admin/vendor/datatables/dataTables.bootstrap4.min.css')); ?>" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -57,7 +63,7 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="fas fa-user"></i>
           <span>Users</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -72,7 +78,7 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="far fa-address-book"></i>
           <span>Donors</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -95,43 +101,43 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="far fa-list-alt"></i>
           <span>Booking</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Info:</h6>
-            <a class="collapse-item" href="login.html">Index</a>
-            <a class="collapse-item" href="register.html">Create</a>
+            <a class="collapse-item" href="<?php echo e(route('bookings.index')); ?>">Index</a>
+            <a class="collapse-item" href="<?php echo e(route('bookings.create')); ?>">Create</a>
           </div>
         </div>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
+          <i class="fas fa-donate"></i>
           <span>Donated</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Info:</h6>
-            <a class="collapse-item" href="login.html">Index</a>
-            <a class="collapse-item" href="register.html">Create</a>
+            <a class="collapse-item" href="<?php echo e(route('donated.index')); ?>">Index</a>
+            <a class="collapse-item" href="<?php echo e(route('donated.create')); ?>">Create</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="<?php echo e(route('blood_types.index')); ?>">
+          <i class="fas fa-notes-medical"></i>
           <span>Blood Type</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
+        <a class="nav-link" href="<?php echo e(route('townships.index')); ?>">
+          <i class="fas fa-city"></i>
           <span>Township</span></a>
       </li>
 
@@ -398,6 +404,13 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo e(asset('sb_admin/js/demo/chart-area-demo.js')); ?>"></script>
   <script src="<?php echo e(asset('sb_admin/js/demo/chart-pie-demo.js')); ?>"></script>
+
+  <!-- Page level plugins -->
+  <script src="<?php echo e(asset('sb_admin/vendor/datatables/jquery.dataTables.min.js')); ?>"></script>
+  <script src="<?php echo e(asset('sb_admin/vendor/datatables/dataTables.bootstrap4.min.js')); ?>"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo e(asset('sb_admin/js/demo/datatables-demo.js')); ?>"></script>
 <?php echo $__env->yieldContent('script'); ?>
 </body>
 
