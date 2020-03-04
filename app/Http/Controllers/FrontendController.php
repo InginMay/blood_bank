@@ -22,6 +22,11 @@ class FrontendController extends Controller
     {
     	return view('frontend.signin');
     }
+    public function Booking($value='')
+    {
+        $donors=Donor::all();
+        return view('frontend.booking',compact('donors'));
+    }
     public function Signup($value='')
     {
         $donors=Donor::all();

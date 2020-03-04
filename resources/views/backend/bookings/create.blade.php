@@ -7,7 +7,7 @@
 			<form action="{{route('bookings.store')}}" method="post">
 				@csrf
 			  <div class="form-group row">
-				<label class="col-sm-2 col-form-label">Choose Donor</label>
+				<label class="col-form-label">Choose Donor</label>
 				<select name="donor" class="form-control">
 					@foreach($donors as $row)
 					<option value="{{$row->id}}">{{$row->user->name}}</option>

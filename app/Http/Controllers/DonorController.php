@@ -64,12 +64,12 @@ class DonorController extends Controller
         if (preg_match("/^[1-9]{1,2}\/(([A-Z]|[a-z]){1}([A-Z]|[a-z]){0,2}){3}\b((\(Na\))|(\(Naing\)))[0-9]{6}$/", $nrc)) {
 
            //dd($request);
-            
+            $password = request('password');
             // store data //4
             $user = new User;
             $user->name = request('name');
             $user->email = request('email');
-            $user->password=Hash::make('123456789');
+            $user->password=Hash::make($password);
             $user->save();
 
             $u_id = $user->id;
@@ -85,7 +85,7 @@ class DonorController extends Controller
             
 
             $donor->save();
-            $user->assignRole('User');
+            $user->assignRole('Admin');
 
             
 

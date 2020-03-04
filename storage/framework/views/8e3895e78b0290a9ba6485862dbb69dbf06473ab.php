@@ -36,12 +36,12 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label for="inputPhone">Phone</label>
-								<input type="number" class="form-control" id="inputPhone" placeholder="Enter Phone" name="phone">
+								<label for="inputPhone">Password</label>
+								<input type="password" class="form-control" id="inputPhone" placeholder="Enter Password" name="pasword">
 							</div>
 							<div class="form-group col-md-6">
-								<label for="inputNRC">NRC</label>
-								<input type="text" class="form-control" id="inputNRC" placeholder="Enter NRC" name="nrc">
+								<label for="inputNRC">Phone</label>
+								<input type="text" class="form-control" id="input phone" placeholder="Enter Phone" name="phone">
 							</div>
 						</div>
 						<div class="form-row">
@@ -65,6 +65,13 @@
 								<input type="date" class="form-control" id="inputDOB" name="dob">
 							</div>
 							<div class="form-group col-md-6">
+								<label for="inputNRC">NRC</label>
+								<br>
+								<input type="text" name="nrc" class="form-control" id="inputnrc">
+						
+							</div>
+						</div>
+						<div class="form-group col-md-6">
 								<label for="inputGender">Gender:</label>
 								<br>
 								<input type="radio" name="gender" id="inputGender" value="male">
@@ -72,7 +79,6 @@
 								<input type="radio" name="gender" id="inputGender" value="female">
 								<label for="female">Female</label>
 							</div>
-						</div>
 						<button type="submit" class="btn btn-danger my-3">Sign Up</button>
 					</form>
 				</div>

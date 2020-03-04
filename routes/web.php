@@ -19,7 +19,7 @@ Route::get('/dashboard',function(){
 	return view('backend.dashboard');
 })->name('backend')->middleware('Admin');
 
-Route::resource('donors','DonorController')->middleware('Admin');
+Route::resource('donors','DonorController');
 
 Route::resource('blood_types','Blood_typeController')->middleware('Admin');
 
@@ -38,6 +38,8 @@ Route::get('contact','FrontendController@Contact')->name('contact');
 Route::get('signin','FrontendController@Signin')->name('signin');
 
 Route::get('signup','FrontendController@Signup')->name('signup');
+
+Route::get('booking','FrontendController@Booking')->name('booking');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
