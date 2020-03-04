@@ -72,7 +72,7 @@
       </div>
      
       <div class="modal-body">
-        <p class="name"></p>
+        <p class="d-inline-block">Name</p><p class="name d-inline-block"></p>
         <p class="email"></p>
         <p class="phone"></p>
         <p class="nrc"></p>

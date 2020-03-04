@@ -6,22 +6,34 @@
 			
 			<div class="row">
 				<div class="col-12">
-					<form action="" method="POST">
+					<form action="{{ route('login') }}" method="POST">
+						@csrf
 						<h1 align="center" class="my-3">SignIn</h1>
 						
 						<div class="form-group col-md-12">
 							<label for="inputEmail">E-Mail Address</label>
-							<input type="email" class="form-control" id="inputEmail">
+							 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+							@error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
 						</div>
 						<div class="form-group col-md-12">
 							<label for="inputPassword">Password</label>
-							<input type="password" class="form-control" id="inputPassword">
+							 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+							 @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
 						</div>
 						<div class="form-group col-md-12">
 							<input type="checkbox">Remember Me
 						</div>
 						<div class="form-group col-md-12">
-							<button class="btn btn-danger">Login</button>
+							<button class="btn btn-danger" type="submit">Login</button>
 							<a href="{{route('signin')}}">Forgot Your Password?</a>
 						</div>
 					</form>

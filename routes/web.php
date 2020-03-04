@@ -38,3 +38,10 @@ Route::get('contact','FrontendController@Contact')->name('contact');
 Route::get('signin','FrontendController@Signin')->name('signin');
 
 Route::get('signup','FrontendController@Signup')->name('signup');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

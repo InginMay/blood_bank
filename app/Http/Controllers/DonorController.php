@@ -8,10 +8,13 @@ use App\Blood_type;
 use App\Township;
 use App\User;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 
 class DonorController extends Controller
 {
+        use RegistersUsers;
+
     /**
      * Display a listing of the resource.
      *
@@ -82,6 +85,7 @@ class DonorController extends Controller
             
 
             $donor->save();
+            $user->assignRole('User');
 
             
 

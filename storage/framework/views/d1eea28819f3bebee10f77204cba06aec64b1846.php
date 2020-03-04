@@ -39,17 +39,6 @@
 		            <?php endif; ?>
 			    </div>
 			  </div>
-			  <div class="form-group row <?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
-			    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-			    <div class="col-sm-10">
-			      <input type="password" class="form-control" name="password" id="inputPassword" value="<?php echo e($donor->user->password); ?>" placeholder="Enter Password">
-			      	<?php if($errors->has('password')): ?>
-			      	<div class="alert alert-danger">
-		                <span class="help-block"><strong><?php echo e($errors->first('password')); ?></strong></span>
-		            </div>
-		            <?php endif; ?>
-			    </div>
-			  </div>
 			  <div class="form-group row <?php echo e($errors->has('dob') ? ' has-error' : ''); ?>">
 			    <label for="inputDob" class="col-sm-2 col-form-label">Dob</label>
 			    <div class="col-sm-10">

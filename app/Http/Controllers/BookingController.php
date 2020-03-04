@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Booking;
 use App\Donor;
+use App\User;
+
 
 class BookingController extends Controller
 {
@@ -17,8 +19,8 @@ class BookingController extends Controller
     {
 
         $bookings = Booking::all();
-        
-        return view('backend.bookings.index',compact('bookings'));
+        $donors = Donor::all();
+        return view('backend.bookings.index',compact('bookings','donors'));
     }
 
     /**
@@ -40,21 +42,21 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {  
+        // dd($request);
+
         $request->validate([
-            "name" => 'required',
+            "donor" => 'required',
             "date"=>'required',
-            "status"=>'required'
+            
 
         ]);
-
         // store data //4
         $booking = new Booking;
-        $booking->donor_id = request('name');
-        $booking->date=request('date');
-        $booking->status=request('status');
+        $booking->donor_id = request('donor');
+        $booking->date=request('date'); 
 
         $booking->save();
-
+        // dd($booking);
         //return redrite
         return redirect()->route('bookings.index');
     }
@@ -97,7 +99,6 @@ class BookingController extends Controller
         $request->validate([
             "name" => 'required',
             "date"=>'required',
-            "status"=>'required'
 
         ]);
 
@@ -105,7 +106,6 @@ class BookingController extends Controller
         $booking = Booking::findOrFail($id);
         $booking->donor_id = request('name');
         $booking->date=request('date');
-        $booking->status=request('status');
 
         $booking->save();
 

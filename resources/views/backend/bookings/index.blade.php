@@ -39,7 +39,7 @@
               @foreach($bookings as $row)
                 <tr>
                   <td>{{$i++}}</td>
-                  <td>{{$row->donor_id}}</td>
+                  <td>{{$row->donor->user->name}}</td>
                   <td>{{$row->date}}</td>
                   <td>
                     

@@ -40,17 +40,6 @@
 		            @endif
 			    </div>
 			  </div>
-			  <div class="form-group row {{ $errors->has('password') ? ' has-error' : '' }}">
-			    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-			    <div class="col-sm-10">
-			      <input type="password" class="form-control" name="password" id="inputPassword" value="{{$donor->user->password}}" placeholder="Enter Password">
-			      	@if ($errors->has('password'))
-			      	<div class="alert alert-danger">
-		                <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
-		            </div>
-		            @endif
-			    </div>
-			  </div>
 			  <div class="form-group row {{ $errors->has('dob') ? ' has-error' : '' }}">
 			    <label for="inputDob" class="col-sm-2 col-form-label">Dob</label>
 			    <div class="col-sm-10">

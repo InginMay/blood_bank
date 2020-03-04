@@ -38,7 +38,7 @@
               <?php $__currentLoopData = $bookings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <td><?php echo e($i++); ?></td>
-                  <td><?php echo e($row->donor_id); ?></td>
+                  <td><?php echo e($row->donor->user->name); ?></td>
                   <td><?php echo e($row->date); ?></td>
                   <td>
                     

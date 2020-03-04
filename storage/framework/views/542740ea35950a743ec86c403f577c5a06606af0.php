@@ -7,7 +7,7 @@
 				<?php echo csrf_field(); ?>
 			  <div class="form-group row">
 				<label class="col-sm-2 col-form-label">Choose Donor</label>
-				<select name="course" class="form-control">
+				<select name="donor" class="form-control">
 					<?php $__currentLoopData = $donors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 					<option value="<?php echo e($row->id); ?>"><?php echo e($row->user->name); ?></option>
 					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
