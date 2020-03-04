@@ -1,9 +1,8 @@
-@extends('backendtemplate')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
  
     <!-- Page Heading -->
-    <a href="{{route('donors.create')}}" class="btn btn-danger float-right">Add New</a>
+    <a href="<?php echo e(route('donors.create')); ?>" class="btn btn-danger float-right">Add New</a>
     <h1 class="h3 mb-2 text-gray-800">Donors Table</h1>
     
     <!-- DataTales Example -->
@@ -24,35 +23,35 @@
             </thead>
        
             <tbody>
-              @php $i=1; @endphp
-              @foreach($donors as $row)
+              <?php $i=1; ?>
+              <?php $__currentLoopData = $donors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <td>{{$i++}}</td>
-                  <td>{{$row->user['name']}}</td>
-                  <td>{{$row->user['email']}}</td>
-                  <td>{{$row->phone}}</td>
-                  @if($row->bloodtype)
-                  <td>{{$row->bloodtype->name}}</td>
-                  @else
+                  <td><?php echo e($i++); ?></td>
+                  <td><?php echo e($row->user['name']); ?></td>
+                  <td><?php echo e($row->user['email']); ?></td>
+                  <td><?php echo e($row->phone); ?></td>
+                  <?php if($row->bloodtype): ?>
+                  <td><?php echo e($row->bloodtype->name); ?></td>
+                  <?php else: ?>
                   <td>Unknow Blood Type</td>
-                  @endif
-                  <td>{{$row->gender}}</td>
+                  <?php endif; ?>
+                  <td><?php echo e($row->gender); ?></td>
                   <td>
-                    <button class="btn btn-info detail" data-id="{{$row->id}}">
+                    <button class="btn btn-info detail" data-id="<?php echo e($row->id); ?>">
                     <i class="fas fa-info-circle"></i></button>
-                    <a href="{{route('donors.edit',$row->id)}}" class="btn btn-warning">
+                    <a href="<?php echo e(route('donors.edit',$row->id)); ?>" class="btn btn-warning">
                       <i class="fas fa-edit"></i>
                     </a>
-                    <form method="POST" action="{{route('donors.destroy',$row->id)}}" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
-                      @csrf
-                      @method('DELETE')
+                    <form method="POST" action="<?php echo e(route('donors.destroy',$row->id)); ?>" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
+                      <?php echo csrf_field(); ?>
+                      <?php echo method_field('DELETE'); ?>
                       <button type="submit" class="btn btn-danger">
                       <i class="fas fa-trash-alt"></i>
                     </button>
                     </form>
                   </td>
                 </tr>
-              @endforeach
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
           </table>
         </div>
@@ -90,8 +89,8 @@
     </div>
   </div>
 </div>
-@endsection
-@section('script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
   <script type="text/javascript">
     $(document).ready(function(){
       $('tbody').on('click','.detail',function(){
@@ -113,4 +112,5 @@
       })
     })
   </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backendtemplate', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\blood_bank\resources\views/backend/donors/index.blade.php ENDPATH**/ ?>

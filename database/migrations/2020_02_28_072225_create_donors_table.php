@@ -19,7 +19,7 @@ class CreateDonorsTable extends Migration
             $table->string('phone');
             $table->string('nrc');
             $table->string('address');
-            $table->unsignedBigInteger('blood_type_id');
+            $table->unsignedBigInteger('blood_type_id')->nullable();
             $table->string('gender');
             $table->date('dob');
             $table->unsignedBigInteger('township_id');

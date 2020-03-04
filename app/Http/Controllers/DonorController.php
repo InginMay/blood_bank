@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Donor;
 use App\Blood_type;
 use App\Township;
 use App\User;
+use Illuminate\Support\Facades\URL;
+
 
 class DonorController extends Controller
 {
@@ -40,7 +42,9 @@ class DonorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+       // dd($request);
+
         $request->validate([
             "name" => 'required|min:5|max:191',
             "email" => 'required',
@@ -51,15 +55,18 @@ class DonorController extends Controller
             "township_id" => 'required',
             "gender" => 'required'
         ]);
+        //dd($request);
 
         $nrc = request('nrc');
         if (preg_match("/^[1-9]{1,2}\/(([A-Z]|[a-z]){1}([A-Z]|[a-z]){0,2}){3}\b((\(Na\))|(\(Naing\)))[0-9]{6}$/", $nrc)) {
+
+           //dd($request);
             
             // store data //4
             $user = new User;
             $user->name = request('name');
             $user->email = request('email');
-            $user->password=request('password');
+            $user->password=Hash::make('123456789');
             $user->save();
 
             $u_id = $user->id;
@@ -72,16 +79,29 @@ class DonorController extends Controller
             $donor->blood_type_id = request('blood_type_id');
             $donor->township_id = request('township_id');
             $donor->gender = request('gender');
+            
 
             $donor->save();
 
+            
+
+
             //return redrite
+            if(app('router')->getRoutes()->match(app('request')->create(URL::previous()))->getName()=='donors.create'){
             return redirect()->route('donors.index');
+            }else{
+                //return back with noti msg
+                return back()->with('status','Register successfully!');
+            }
+            
         }
         else
         { 
-            return Redirect::back()->withErrors($nrc);
+
+            return redirect()->back()->withErrors('nrc format is inncorrect');
         }
+
+       
     }
 
     
@@ -128,21 +148,20 @@ class DonorController extends Controller
             "dob" => 'required',
             "nrc" => 'required',
             "address" => 'required',
-            "blood_type_id" => 'required',
             "township_id" => 'required',
             "gender" => 'required'
         ]);
 
         // store data //4
-        $user = new User;
+        $user = User::find($id);
         $user->name = request('name');
         $user->email = request('email');
         $user->password=request('password');
         $user->save();
 
         $u_id = $user->id;
-        $donor = Donor::find($id);
-        $donor->user_id=$u_id;
+        $donor = Donor::where('user_id',$u_id)->first();
+        
         $donor->phone = request('phone');
         $donor->dob = request('dob');
         $donor->nrc = request('nrc');

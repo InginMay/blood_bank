@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Donor;
+use App\Township;
+
+
 class FrontendController extends Controller
 {
     public function About($value='')
@@ -22,7 +25,8 @@ class FrontendController extends Controller
     public function Signup($value='')
     {
         $donors=Donor::all();
-    	return view('frontend.signup',compact('donors'));
+        $townships = Township::all();
+    	return view('frontend.signup',compact('donors','townships'));
     }
 
     public function Main($value='')

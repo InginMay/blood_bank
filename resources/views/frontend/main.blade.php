@@ -2,7 +2,7 @@
  @section('content')
 
  <div class="container my-5">
-    <h1 class="text-center">သွေးအကြောင်း</h1>
+    <h1 class="text-center">သွေးအမျိုးအစား</h1>
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-12 my-3">
         <img src="{{asset('blood/images/download.png')}}" width="230" height="250" data-toggle="modal" data-target="#AModel">
