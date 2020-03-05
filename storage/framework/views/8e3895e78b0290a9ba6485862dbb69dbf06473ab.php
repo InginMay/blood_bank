@@ -37,7 +37,7 @@
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label for="inputPhone">Password</label>
-								<input type="password" class="form-control" id="inputPhone" placeholder="Enter Password" name="pasword">
+								<input type="password" class="form-control" id="inputPhone" placeholder="Enter Password" name="password">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="inputNRC">Phone</label>
@@ -53,6 +53,7 @@
 								<label for="inputTownship">Township</label>
 								
 								<select class="form-control" name="township_id">
+									<option>--Select Township--</option>
 									<?php $__currentLoopData = $townships; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<option value="<?php echo e($row->id); ?>"><?php echo e($row->name); ?></option>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -67,7 +68,7 @@
 							<div class="form-group col-md-6">
 								<label for="inputNRC">NRC</label>
 								<br>
-								<input type="text" name="nrc" class="form-control" id="inputnrc">
+								<input type="text" name="nrc" class="form-control" id="inputnrc" placeholder="Enter NRC">
 						
 							</div>
 						</div>

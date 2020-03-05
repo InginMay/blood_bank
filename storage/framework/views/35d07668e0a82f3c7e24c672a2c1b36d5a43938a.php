@@ -64,9 +64,11 @@
                   </form>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo e(route('booking')); ?>">Booking</a>
-          </li>
+          
+            <li class="nav-item">
+              <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal">Booking</button>
+            </li>
+          
           <?php else: ?>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo e(route('signin')); ?>">SignIn</a>
@@ -150,4 +152,30 @@
 <!-- Footer -->
 
 </body>
-</html><?php /**PATH /opt/lampp/htdocs/blood_donation/resources/views/frontendtemplate.blade.php ENDPATH**/ ?>
+</html>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModal">Booking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="<?php echo e(route('bookings.store')); ?>" method="POST">
+        <?php echo csrf_field(); ?>
+        <div class="modal-body">
+            <label class="form-control-label">Date</label>
+            <input type="date" name="booking" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger">Book</button>
+        </div>
+      </form> 
+    </div>
+  </div>
+</div>
+
+<?php /**PATH /opt/lampp/htdocs/blood_donation/resources/views/frontendtemplate.blade.php ENDPATH**/ ?>

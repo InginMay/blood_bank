@@ -65,6 +65,7 @@ class DonorController extends Controller
 
            //dd($request);
             $password = request('password');
+            // dd($password);
             // store data //4
             $user = new User;
             $user->name = request('name');

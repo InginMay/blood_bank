@@ -68,9 +68,11 @@
                   </a>
               </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('booking')}}">Booking</a>
-          </li>
+          
+            <li class="nav-item">
+              <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal">Booking</button>
+            </li>
+          
           @else
           <li class="nav-item">
             <a class="nav-link" href="{{route('signin')}}">SignIn</a>
@@ -157,3 +159,28 @@
 
 </body>
 </html>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModal">Booking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{route('bookings.store')}}" method="POST">
+        @csrf
+        <div class="modal-body">
+            <label class="form-control-label">Date</label>
+            <input type="date" name="booking" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger">Book</button>
+        </div>
+      </form> 
+    </div>
+  </div>
+</div>
+

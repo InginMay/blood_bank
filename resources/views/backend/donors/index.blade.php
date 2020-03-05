@@ -72,7 +72,10 @@
       </div>
      
       <div class="modal-body">
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8ff2514187f0300393226849881ce7d69d9840e
         <p class="d-inline-block mx-3">Name: </p><p class="name d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Email: </p><p class="email d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Phone: </p><p class="phone d-inline-block"></p><br>
@@ -82,7 +85,10 @@
         <p class="d-inline-block mx-3">DOB: </p><p class="dob d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Gender: </p><p class="gender d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Township: </p><p class="township d-inline-block"></p><br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8ff2514187f0300393226849881ce7d69d9840e
       </div>
      
       <div class="modal-footer">

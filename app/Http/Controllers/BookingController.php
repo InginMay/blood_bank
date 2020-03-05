@@ -46,7 +46,7 @@ class BookingController extends Controller
 
         $request->validate([
             "donor" => 'required',
-            "date"=>'required',
+            "date"=>'required'
             
 
         ]);
@@ -58,7 +58,7 @@ class BookingController extends Controller
         $booking->save();
         // dd($booking);
         //return redrite
-        return redirect()->route('bookings.index');
+        return redirect()->back();
     }
 
     /**

@@ -37,7 +37,7 @@
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label for="inputPhone">Password</label>
-								<input type="password" class="form-control" id="inputPhone" placeholder="Enter Password" name="pasword">
+								<input type="password" class="form-control" id="inputPhone" placeholder="Enter Password" name="password">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="inputNRC">Phone</label>
@@ -53,6 +53,7 @@
 								<label for="inputTownship">Township</label>
 								
 								<select class="form-control" name="township_id">
+									<option>--Select Township--</option>
 									@foreach($townships as $row)
 									<option value="{{$row->id}}">{{$row->name}}</option>
 								@endforeach
@@ -67,7 +68,7 @@
 							<div class="form-group col-md-6">
 								<label for="inputNRC">NRC</label>
 								<br>
-								<input type="text" name="nrc" class="form-control" id="inputnrc">
+								<input type="text" name="nrc" class="form-control" id="inputnrc" placeholder="Enter NRC">
 						
 							</div>
 						</div>
