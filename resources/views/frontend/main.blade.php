@@ -5,16 +5,16 @@
     <h1 class="text-center">သွေးအမျိုးအစား</h1>
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-12 my-3">
-        <img src="{{asset('blood/images/download.png')}}" width="230" height="250" data-toggle="modal" data-target="#AModel">
+        <img src="{{asset('image/a1.png')}}" width="160" height="260" data-toggle="modal" data-target="#AModel">
       </div>
       <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-        <img src="{{asset('blood/images/dd.png')}}" width="210" height="240" data-toggle="modal" data-target="#BModel">
+        <img src="{{asset('image/b1.png')}}" width="150" height="250" data-toggle="modal" data-target="#BModel">
       </div>
       <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-        <img src="{{asset('blood/images/bb.png')}}" width="250" height="240" data-toggle="modal" data-target="#ABModel">
+        <img src="{{asset('image/ab2.png')}}" width="180" height="250" data-toggle="modal" data-target="#ABModel">
       </div>
       <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-        <img src="{{asset('blood/images/oo.png')}}" width="250" height="240" data-toggle="modal" data-target="#OModel">
+        <img src="{{asset('image/o.png')}}" width="150" height="250" data-toggle="modal" data-target="#OModel">
       </div>
     </div>
 </div>
@@ -67,10 +67,10 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-              <img src="{{asset('blood/images/download.png')}}" class="img-fluid" style="width: 400px;height: 300px;">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img src="{{asset('image/a1.png')}}" class="img-fluid" style="width: 250px;height: 300px;">
             </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                   A သွေး အမျိုးအစားပိုင်ရှင်တွေအတွက် ကြောက်စရာအကောင်းဆုံးကတော့နဲ့ အဖြစ်အများဆုံးကတော့ အစာအိမ်ကင်ဆာပါ။ A သွေးဟာ O သွေးထက်စာရင် အစာအိမ်ကို ရောဂါပိုးဖြစ်တဲ့ H. pylori ဘက်တီးရီးယားကို ပိုပြီးတုန့်ပြန်လွယ်တာကြောင့် အစာအိမ်ထိခိုက်မှုနှုန်းပိုများပြီး ကင်ဆာ​ဖြစ်နိုင်ချေ ပိုများရတာဖြစ်ပါတယ်။
 
                   ဘယ်လိုကာကွယ်ကြမလဲ ။ ။ A သွေးပိုင်ရှင်တွေ အနေနဲ့ အကင်တို့၊ ဝက်ပေါင်ခြောက်တို့၊ နဲ့ H. pylori ရောဂါပိုးတွေ အများကြီးရှိနေနိုင်တဲ့ လက်လုပ်ချဉ်တွေကို ရှောင်စား လျှော့စားသင့်ပါတယ်။ သွေးအုပ်စု A+ ကို A+, A-, O+, O- ဆီကသွေးသွင်းနိုင်ပါတယ်။
@@ -93,10 +93,10 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-              <img src="{{asset('blood/images/dd.png')}}" class="img-fluid" style="width: 400px;height: 300px;">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img src="{{asset('image/b1.png')}}" class="img-fluid" style="width: 200px;height: 300px;">
             </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                   B သွေး ကကျတော့ အမျိုးအစား ၂ ဆီးချိုနဲ့ ဆက်စပ်မှုအရှိဆုံး သွေးအမျိုးအစား တစ်ခုပါ။ O သွေးထက်စာရင် B သွေးက ဆီးချို ၂၁ ရာခိုင်နှုန်း ပိုဖြစ်နိုင်ပါတယ်။
 
                   ကိုယ်အလေးချိန်တက်လာခြင် းအထူးသဖြင့် ခါးအဆီတက်လာခြင်းက ဆီးချိြုဖစ်နိုင်ချေပိုများတာကြောင့် B သွေးပိုင်ရှင်တွေ အနေနဲ့ ကိုယ်အလေးချိန်ထိန်းထားဖို့ အရေးကြီးပါတယ်။ တစ်ချိန်လုံးထိုင်ပြီး အလုပ်လုပ်နေမယ့်အစား ကိုယ်လက်လှုပ်ရှားမှုလေးလုပ်ပါ။ အစားအသောက် ဆင်ခြင်ပါ။သွေးအုပ်စု B+ ကို   B+, B-, O+, O- ဆီကသွေးသွင်းနိုင်ပါတယ်။ 
@@ -119,10 +119,10 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-              <img src="{{asset('blood/images/bb.png')}}" class="img-fluid" style="width: 400px;height: 300px;">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img src="{{asset('image/ab2.png')}}" class="img-fluid" style="width: 250px;height: 300px;">
             </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                   AB သွေး တွေနဲ့ ဆက်စပ်မှု အရှိဆုံးကတော့ နှလုံးရောဂါပါ။ AB သွေးပိုင်ရှင်တွေဟာ O သွေးပိုင်ရှင်တွေထက်စာရင် နှလုံးရောဂါဖြစ်နိုင်ချေ ၂၃ ရာခိုင်နှုန်းပိုမျာတယ်လို့ ဆိုပါတယ်။ ဘာ့ကြောင့်လဲဆိုတော့ သူတို့ဟာ ticker-hurting inflammation လို့ခေါ်တဲ့ နှလုံးရောင်ရမ်းခြင်းဖြစ်နိုင်ချေ အရမ်းကိုများလို့ပါ။
 
                   ကြိုတင်ကာကွယ်ချင်ရင်တော့ AB သွေးပိုင်ရှင်တွေ အနေနဲ့ တစ်နေ့ကို မိနစ် ၃၀ လောက်နှလုံးလေ့ကျင့်ခန်းတွေ လုပ်ပေးဖို့ လိုပါလိမ့်မယ်။ လမ်းလျှောက်တာတို့၊ စက်ဘီးနီးတာတို့ကို တစ်ပါတ် ၅ ကြိမ်လောက်လုပ်ပေါ့။ ချွေးထွက်လေလေ ၊ နှလုံးခုန်နှုန်းမြန်ပြီ းမောလေလေ နှလုံးကို လှုပ်ရှားမှုရအောင် လုပ်ပေးသလိုဖြစ်တာကြောင့် သွေးကြောပိတ်တာ၊ သွေးခဲတာတွေ လျော့ပါသွားပြီး နှလုံးရောဂါဖြစ်နိုင်ချေ နည်းသွားမှာပါ။
@@ -147,10 +147,10 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-              <img src="{{asset('blood/images/oo.png')}}" class="img-fluid" style="width: 400px;height: 300px;">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img src="{{asset('image/o.png')}}" class="img-fluid" style="width: 200px;height: 300px;">
             </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-8 col-md-12 col-sm-12">
                   O သွေးပိုင်ရှင်တွေ အတွက် စိတ်အညစ်ရဆုံး ရောဂါကတော့ ကလေးမရနိုင်တဲ့ ပြဿနာပဲဖြစ်ပါတယ်။ O သွေးနဲ့ reduced ovarian reserve လို့ခေါ်တဲ့ မျိုးဥနည်းခြင်း ပြဿနာနဲ့က အရမ်းကို ဆက်စပ်မှုရှိနေတဲ့အတွက်ကြောင့်ပါ။
 
                   ဒါပေမယ့် O သွေးပိုင်ရှင်တိုင်း ဒါမျိုး ဖြစ်ရမယ်လို့ မဆိုလိုပါဘူး။ အများဆုံး ဖြစ်တတ်တယ်လို့ ဆိုထားတဲ့အတွက်ကြောင့် မဖြစ်ချင်ရင်တော့ ကျန်းမာရေးနဲ့ညီညွတ်မျှတအောင်စားမယ်၊ အရက် တွေ ဆေးလိပ် တွေ လျှော့သောက်မယ်ဆိုရင်တော့ ဒီ ပြဿနာအတွက် စိတ်ပူစရာလိုတော့မှာ မဟုတ်ပါဘူး။သွေးအုပ်စု O+ ကို O+, O- ဆီကသွေးသွင်းနိုင်ပါတယ်။

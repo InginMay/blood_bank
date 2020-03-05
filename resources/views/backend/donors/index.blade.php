@@ -72,17 +72,6 @@
       </div>
      
       <div class="modal-body">
-<<<<<<< HEAD
-        <p class="d-inline-block">Name</p><p class="name d-inline-block"></p>
-        <p class="email"></p>
-        <p class="phone"></p>
-        <p class="nrc"></p>
-        <p class="address"></p>
-        <p class="bloodtype"></p>
-        <p class="dob"></p>
-        <p class="gender"></p>
-        <p class="township"></p>
-=======
         <p class="d-inline-block mx-3">Name: </p><p class="name d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Email: </p><p class="email d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Phone: </p><p class="phone d-inline-block"></p><br>
@@ -92,7 +81,6 @@
         <p class="d-inline-block mx-3">DOB: </p><p class="dob d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Gender: </p><p class="gender d-inline-block"></p><br>
         <p class="d-inline-block mx-3">Township: </p><p class="township d-inline-block"></p><br>
->>>>>>> ce5ab8dd8cb5be4a1317aec31b944b28cecff89b
       </div>
      
       <div class="modal-footer">
