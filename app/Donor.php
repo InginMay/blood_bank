@@ -22,4 +22,9 @@ class Donor extends Model
     {
     	return $this->belongsTo('App\User');
     }
+
+    public function booking($value='')
+    {
+        return $this->hasOne('App\Booking');
+    }
 }
