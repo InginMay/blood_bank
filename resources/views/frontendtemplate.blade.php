@@ -61,6 +61,11 @@
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                   </form>
+
+                  <a href="{{route('donor_detail',Auth::user()->id)}}"  class="dropdown-item" id="profile">
+                      Profile
+                      
+                  </a>
               </div>
           </li>
           <li class="nav-item">
@@ -147,6 +152,8 @@
 
 </footer>
 <!-- Footer -->
+@yield('script')
+
 
 </body>
 </html>

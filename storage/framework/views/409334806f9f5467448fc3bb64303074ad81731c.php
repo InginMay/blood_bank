@@ -2,7 +2,6 @@
 <div class="container-fluid">
  
     <!-- Page Heading -->
-    <a href="<?php echo e(route('donated.create')); ?>" class="btn btn-danger float-right">Add New</a>
     <h1 class="h3 mb-2 text-gray-800">Donated Tables</h1>
     
     <!-- DataTales Example -->

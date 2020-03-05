@@ -71,7 +71,8 @@ class BookingController extends Controller
     {
         $booking=Booking::findOrFail($id);
         $donors=Donor::all(); //$course =>Model Table
-         return view('backend.bookings.show',compact('booking','donors'));
+        $user=User::all();
+         return view('backend.bookings.show',compact('booking','donors','user'));
     }
 
     /**

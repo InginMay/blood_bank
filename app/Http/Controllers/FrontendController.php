@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Donor;
 use App\Township;
-
+use App\User;
 
 class FrontendController extends Controller
 {
@@ -38,4 +38,13 @@ class FrontendController extends Controller
     {
     	return view('frontend.main');
     }
+
+    public function donor_detail($id)
+    {
+        $user = User::find($id);
+     
+        
+         return view('frontend.donar_detail',compact('user'));
+    }
+
 }

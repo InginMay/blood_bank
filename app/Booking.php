@@ -12,4 +12,9 @@ class Booking extends Model
     {
     	return $this->belongsTo('App\Donor');
     }
+
+    public function user($value='')
+    {
+    	return $this->hasMany('App\User');
+    }
 }

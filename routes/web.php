@@ -25,9 +25,9 @@ Route::resource('blood_types','Blood_typeController')->middleware('Admin');
 
 Route::resource('townships','TownshipController')->middleware('Admin');
 
-Route::resource('bookings','BookingController')->middleware('Admin');
+Route::resource('bookings','BookingController');
 
-Route::resource('donated','DonatedController')->middleware('Admin');
+Route::resource('donated','DonatedController');
 
 Route::get('/','FrontendController@main')->name('main');
 
@@ -40,9 +40,8 @@ Route::get('signin','FrontendController@Signin')->name('signin');
 Route::get('signup','FrontendController@Signup')->name('signup');
 
 Route::get('booking','FrontendController@Booking')->name('booking');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('donor_detail/{id}','FrontendController@donor_detail')->name('donor_detail');
 
 Auth::routes();
 

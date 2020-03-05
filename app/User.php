@@ -39,8 +39,13 @@ class User extends Authenticatable
     ];
 
 
-    public function donors($value='')
+    public function donor($value='')
     {
-        return $this->hasMany('App\Donor');
+        return $this->hasOne('App\Donor');
+    }
+
+     public function booking($value='')
+    {
+        return $this->belongsTo('App\Donor');
     }
 }
