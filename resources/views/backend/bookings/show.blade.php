@@ -7,7 +7,7 @@
 				
 				<div class="row">
 					<div class="col-12 my-5">
-						<h2>Booking Detail</h2>
+						<h2 style="text-align: center;"><b>Booking Detail</b></h2>
 						<h5 class="mx-4 my-3">Name:   {{$booking->donor->user->name}}</h5>
 						<h5 class="mx-4 my-3">Email:   {{$booking->donor->user->email}}</h5>
 						<h5 class="mx-4 my-3">Phone:   {{$booking->donor->phone}}</h5>

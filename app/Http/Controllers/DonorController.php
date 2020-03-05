@@ -14,6 +14,10 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 class DonorController extends Controller
 {
         use RegistersUsers;
+    public function __construct()
+    {
+        $this->middleware("role:Admin")->except('store','update');
+    }
 
     /**
      * Display a listing of the resource.

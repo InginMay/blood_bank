@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Booking;
 use App\Donor;
 use App\User;
-
+use Auth;
 
 class BookingController extends Controller
 {
@@ -45,14 +45,15 @@ class BookingController extends Controller
         // dd($request);
 
         $request->validate([
-            "donor" => 'required',
             "date"=>'required'
-            
-
         ]);
+        
+        $user_id = Auth::user()->id;
+        $donor = Donor::where('user_id',$user_id)->first();
+        $donor_id = $donor->id;
         // store data //4
         $booking = new Booking;
-        $booking->donor_id = request('donor');
+        $booking->donor_id = $donor_id;
         $booking->date=request('date'); 
 
         $booking->save();

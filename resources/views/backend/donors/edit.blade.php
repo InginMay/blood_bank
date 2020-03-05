@@ -65,8 +65,7 @@
 				<div class="form-group row {{ $errors->has('address') ? ' has-error' : '' }}">
 					<label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
 					<div class="col-sm-10">
-						<textarea type="Address" class="form-control" name="address" id="inputAddress" placeholder="Address....">
-							{{$donor->address}}
+						<textarea type="Address" class="form-control" name="address" id="inputAddress" placeholder="Address....">{{$donor->address}}
 						</textarea>
 						@if ($errors->has('address'))
 						<div class="alert alert-danger">

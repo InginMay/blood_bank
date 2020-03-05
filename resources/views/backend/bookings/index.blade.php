@@ -3,19 +3,7 @@
 <div class="container-fluid">
  
   <!-- Page Heading -->
-  @php
-
-  $now =Carbon\Carbon::now();
-  foreach($bookings as $row){
-  $b_date=Carbon\Carbon::parse($row->date);
   
-
-  $diff =$b_date->diffInDays($now);
-  
-}
-
-
-@endphp
 
 
 <h1 class="h3 mb-2 text-gray-800">Booking Tables</h1>
@@ -35,26 +23,45 @@
         </thead>
         
         <tbody>
+                  
+               
           @php $i=1; @endphp
           @foreach($bookings as $row)
+          @php
+          $now =Carbon\Carbon::now();
+          $b_date=Carbon\Carbon::parse($row->date);        
+          $diff =$b_date->diffInDays($now);
+          @endphp
           <tr>
             <td>{{$i++}}</td>
             <td>{{$row->donor->user->name}}</td>
             <td>{{$row->date}}</td>
             <td>
               
-
-              @if($now < $b_date)
-              <button type='button' class='btn btn-primary'>Confirm</button>
               
+              @if($now < $b_date)
+                <form action="{{route('donated.store')}}" method="post" class="d-inline">
+                  @csrf
+                  <input type="hidden" name="name" value="{{$row->donor->user->name}}">
+                  <input type="hidden" name="date" value="{{$row->date}}">
+                  <button type='submit' class='btn btn-danger'>Confirm</button>
+                </form>
               
               @elseif($now > $b_date)
 
               @if($diff > 3)
-              <button type='button' class='btn btn-danger' >Cancel</button>
+                <form method="POST" action="{{route('bookings.destroy',$row->id)}}" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
+                  @csrf
+                  @method('DELETE')
+                  <button type='submit' class='btn btn-primary' >Cancel</button>
+                </form>
               @else
-
-              <button type='button' class='btn btn-primary' >Confirm</button>
+                <form action="{{route('donated.store')}}" method="post" class="d-inline">
+                  @csrf
+                  <input type="hidden" name="name" value="{{$row->donor->user->name}}">
+                  <input type="hidden" name="date" value="{{$row->date}}">
+                  <button type='submit' class='btn btn-danger' >Confirm</button>
+                </form>
               @endif
               @endif
               

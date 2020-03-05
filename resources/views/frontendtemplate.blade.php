@@ -113,27 +113,27 @@
         <div class="mb-2 flex-center">
 
           <!-- Facebook -->
-          <a class="fb-ic">
+          <a class="fb-ic" href="https://www.facebook.com">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x" style="color:white"> </i>
           </a>
           <!-- Twitter -->
-          <a class="tw-ic">
+          <a class="tw-ic" href="https://www.twitter.com">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x" style="color:white"> </i>
           </a>
           <!-- Google +-->
-          <a class="gplus-ic">
+          <a class="gplus-ic" href="https://www.google.com">
             <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x" style="color:white"> </i>
           </a>
           <!--Linkedin -->
-          <a class="li-ic">
+          <a class="li-ic" href="https://www.linkedin.com">
             <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x" style="color:white"> </i>
           </a>
           <!--Instagram-->
-          <a class="ins-ic">
+          <a class="ins-ic" href="https://www.instagram.com">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x" style="color:white"> </i>
           </a>
           <!--Pinterest-->
-          <a class="pin-ic">
+          <a class="pin-ic" href="https://www.pinterest.com">
             <i class="fab fa-pinterest fa-lg white-text fa-2x" style="color:white"> </i>
           </a>
         </div>
@@ -173,7 +173,7 @@
         @csrf
         <div class="modal-body">
             <label class="form-control-label">Date</label>
-            <input type="date" name="booking" class="form-control">
+            <input type="date" name="date" class="form-control">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Donated;
 use App\Donor;
+use Auth;
 class DonatedController extends Controller
 {
     /**
@@ -14,8 +15,9 @@ class DonatedController extends Controller
      */
     public function index()
     {
-        $donated = Donated::all();
-        return view('backend.donated.index',compact('donated'));
+        $donateds = Donated::all();
+        $donors = Donor::all();
+        return view('backend.donated.index',compact('donateds','donors'));
     }
 
     /**
@@ -37,19 +39,23 @@ class DonatedController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+
         $request->validate([
-            "name" => 'required',
             "date"=>'required'
-
         ]);
-
+        $date = date('Y-m-d');
+        
+        $user_id = Auth::user()->id;
+        $donor = Donor::where('user_id',$user_id)->first();
+        $donor_id = $donor->id;
         // store data //4
         $donated = new Donated;
-        $donated->donor_id = request('name');
-        $donated->date=request('date');
+        $donated->donor_id = $donor_id;
+        $donated->date=$date; 
 
         $donated->save();
-
+        // dd($donated);
         //return redrite
         return redirect()->route('donated.index');
     }

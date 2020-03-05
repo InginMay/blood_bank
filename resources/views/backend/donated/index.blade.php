@@ -1,7 +1,8 @@
 @extends('backendtemplate')
 @section('content')
+
 <div class="container-fluid">
- 
+
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Donated Tables</h1>
   
@@ -14,31 +15,37 @@
             <tr>
               <th>No</th>
               <th>Name</th>
-              <th>Date</th>
+              <th>Donated Date</th>
+              <th>Donate Date</th>
               <th>Action</th>
             </tr>
           </thead>
           
           <tbody>
             @php $i=1; @endphp
-            @foreach($donated as $row)
+            @foreach($donateds as $row)
+
+            @php
+
+            $now =Carbon\Carbon::now();
+            $db_date=Carbon\Carbon::parse($row->date);
+            $month=$db_date->addMonths(4);
+            $date=date('Y-m-d',strtotime($month));
+            @endphp
+
             <tr>
               <td>{{$i++}}</td>
-              <td>{{$row->donar->name}}</td>
+              <td>{{$row->donor->user->name}}</td>
+              <td>{{$row->date}}</td>
+              <td>{{$date}}</td>
               <td>
-                <a href="{{route('donated.show',$row->id)}}" class="btn btn-info">
-                  <i class="fas fa-info-circle"></i></a>
-                  <a href="{{route('donated.edit',$row->id)}}" class="btn btn-warning">
-                    <i class="fas fa-edit"></i>
-                  </a>
-                  <form method="POST" action="{{route('donated.destroy',$row->id)}}" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </form>
-                </td>
+                @if($row->date < $now && $now < $month)
+                  <button type="submit" class="btn btn-danger">Deactive</button>
+                  @else
+                  <button type="submit" class="btn btn-success">Active</button> 
+                    
+                @endif
+              </td>
               </tr>
               @endforeach
             </tbody>

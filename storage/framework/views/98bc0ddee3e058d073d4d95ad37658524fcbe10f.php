@@ -90,6 +90,7 @@
   </div>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('script'); ?>
   <script type="text/javascript">
     $(document).ready(function(){
