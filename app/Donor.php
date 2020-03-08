@@ -27,4 +27,9 @@ class Donor extends Model
     {
         return $this->hasOne('App\Booking');
     }
+
+    public function donated($value='')
+    {
+        return $this->hasOne('App\Donated');
+    }
 }

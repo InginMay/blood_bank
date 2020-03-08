@@ -43,7 +43,7 @@
                   <?php echo csrf_field(); ?>
                   <input type="hidden" name="name" value="<?php echo e($row->donor->user->name); ?>">
                   <input type="hidden" name="date" value="<?php echo e($row->date); ?>">
-                  <button type='submit' class='btn btn-danger'>Confirm</button>
+                  <button type='submit' class='btn btn-primary'>Confirm</button>
                 </form>
               
               <?php elseif($now > $b_date): ?>
@@ -52,14 +52,14 @@
                 <form method="POST" action="<?php echo e(route('bookings.destroy',$row->id)); ?>" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
                   <?php echo csrf_field(); ?>
                   <?php echo method_field('DELETE'); ?>
-                  <button type='submit' class='btn btn-primary' >Cancel</button>
+                  <button type='submit' class='btn btn-danger' >Cancel</button>
                 </form>
               <?php else: ?>
                 <form action="<?php echo e(route('donated.store')); ?>" method="post" class="d-inline">
                   <?php echo csrf_field(); ?>
-                  <input type="hidden" name="name" value="<?php echo e($row->donor->user->name); ?>">
+                  <input type="hidden" name="id" value="<?php echo e($row->donor->id); ?>">
                   <input type="hidden" name="date" value="<?php echo e($row->date); ?>">
-                  <button type='submit' class='btn btn-danger' >Confirm</button>
+                  <button type='submit' class='btn btn-primary' >Confirm</button>
                 </form>
               <?php endif; ?>
               <?php endif; ?>

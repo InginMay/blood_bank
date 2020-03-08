@@ -25,7 +25,7 @@
 	 </head>
 <body>
     
-		<div class="blood">
+		<div class="blood mb-5">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;">
       <a class="navbar-brand" href="#">
         <img src="<?php echo e(asset('blood/images/logo.gif')); ?>" style="width: 170px;height: 50px;">
@@ -69,10 +69,28 @@
                   </a>
               </div>
           </li>
+          <?php if(Auth::user()->donor->donated): ?>
+            <?php
+
+            $now =Carbon\Carbon::now();
+            $auth_date = Auth::user()->donor->donated->date;
+            $donated_date=Carbon\Carbon::parse($auth_date);
+            $month=$donated_date->addMonths(4);
+            $date=date('Y-m-d',strtotime($month));
+            ?>
           
+          <?php if($auth_date < $now && $now < $month): ?>
             <li class="nav-item">
-              <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal">Booking</button>
+              <button class="btn btn-danger" disabled="disabled" data-target="#bookingModal" data-toggle="modal" disabled="">
+                Booking
+              </button>
             </li>
+            <?php endif; ?>
+          <?php else: ?>
+            <li class="nav-item">
+              <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
+            </li>
+          <?php endif; ?>
           
           <?php else: ?>
           <li class="nav-item">
@@ -86,13 +104,7 @@
       </div>
     </nav>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <img src="<?php echo e(asset('blood/images/home3.jpg')); ?>" style="width: 100%;height: 500px;">
-      </div>
-    </div>
-  </div>
+  
 
 
   <?php echo $__env->yieldContent('content'); ?>

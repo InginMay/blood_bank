@@ -1,15 +1,22 @@
 <?php $__env->startSection('content'); ?>
 
+<div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-12">
+        <img src="<?php echo e(asset('image/signupme.jpg')); ?>" style="width: 500px;height: 500px;margin-left: 300px;">
+      </div>
+    </div>
+  </div>
 
  <?php if($errors->any()): ?>
-    				<div class="alert alert-danger">
-        				<ul>
-            				<?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                			<li><?php echo e($error); ?></li>
-            				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        				</ul>
-    				</div>
-				<?php endif; ?> 
+	<div class="alert alert-danger">
+		<ul>
+			<?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			<li><?php echo e($error); ?></li>
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+		</ul>
+	</div>
+<?php endif; ?> 
 <div class="container my-3">
 	<div class="row ">
 		<div class="col-md-8 offset-2 card shadow">

@@ -1,8 +1,16 @@
  
  <?php $__env->startSection('content'); ?>
 
+ <div class="container-fluid mt-2">
+    <div class="row">
+      <div class="col-12">
+        <img src="<?php echo e(asset('image/111.jpg')); ?>" style="width: 100%;height: 500px;">
+      </div>
+    </div>
+  </div>
+
  <div class="container my-5">
-    <h1 class="text-center">သွေးအမျိုးအစား</h1>
+    <h1 class="text-center"><b>သွေးအမျိုးအစား</b></h1>
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-12 my-3">
         <img src="<?php echo e(asset('image/a1.png')); ?>" width="160" height="260" data-toggle="modal" data-target="#AModel">
@@ -26,7 +34,7 @@
             
           <div class="row">
             <div class="col-12 my-5">
-              <h1 align="center">သင်သွေးလှူရှင်ဖြစ်နိုင်ပါသလား</h1>
+              <h1 align="center"><b>သင်သွေးလှူရှင်ဖြစ်နိုင်ပါသလား</b></h1>
               <h5 class="mx-5">သင်သည် အသက်(၁၈) နှစ်မှ (၅၅) နှစ်အတွင်းရှိသူ ဖြစ်ရမည်။</h5>
 
               <h5 class="mx-5">အမျိုးသားအတွက် ကိုယ်အလေးချိန် ပေါင် (၁၁၀) အထက် ရှိရမည်။</h5>

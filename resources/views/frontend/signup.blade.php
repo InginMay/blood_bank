@@ -1,16 +1,23 @@
 @extends('frontendtemplate')
 @section('content')
 
+<div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-12">
+        <img src="{{asset('image/signupme.jpg')}}" style="width: 500px;height: 500px;margin-left: 300px;">
+      </div>
+    </div>
+  </div>
 
  @if ($errors->any())
-    				<div class="alert alert-danger">
-        				<ul>
-            				@foreach ($errors->all() as $error)
-                			<li>{{ $error }}</li>
-            				@endforeach
-        				</ul>
-    				</div>
-				@endif 
+	<div class="alert alert-danger">
+		<ul>
+			@foreach ($errors->all() as $error)
+			<li>{{ $error }}</li>
+			@endforeach
+		</ul>
+	</div>
+@endif 
 <div class="container my-3">
 	<div class="row ">
 		<div class="col-md-8 offset-2 card shadow">

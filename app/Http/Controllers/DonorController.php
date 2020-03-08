@@ -90,7 +90,7 @@ class DonorController extends Controller
             
 
             $donor->save();
-            $user->assignRole('Admin');
+            $user->assignRole('User');
 
             
 

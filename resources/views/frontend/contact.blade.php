@@ -1,5 +1,14 @@
 @extends('frontendtemplate')
 @section('content')
+
+<div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-12">
+        <img src="{{asset('image/contactme.jpg')}}" style="width: 500px;height: 500px;margin-left: 300px;">
+      </div>
+    </div>
+  </div>
+
 <div class="container-fluid my-3">
 	<div class="row ">
 		<div class="col-lg-6 col-md-6 col-sm-12">
@@ -21,7 +30,7 @@
 							</div>
 							<div class="form-group col-md-12">
 								
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message..."></textarea>
 							</div>
 							<div class="form-group col-md-12">
 								<button class="btn btn-danger">Send</button>

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard',function(){
 	return view('backend.dashboard');
-})->name('backend')->middleware('role:Admin');
+})->name('backend');
 
 Route::resource('donors','DonorController');
 

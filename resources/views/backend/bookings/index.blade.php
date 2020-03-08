@@ -44,7 +44,7 @@
                   @csrf
                   <input type="hidden" name="name" value="{{$row->donor->user->name}}">
                   <input type="hidden" name="date" value="{{$row->date}}">
-                  <button type='submit' class='btn btn-danger'>Confirm</button>
+                  <button type='submit' class='btn btn-primary'>Confirm</button>
                 </form>
               
               @elseif($now > $b_date)
@@ -53,14 +53,14 @@
                 <form method="POST" action="{{route('bookings.destroy',$row->id)}}" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
                   @csrf
                   @method('DELETE')
-                  <button type='submit' class='btn btn-primary' >Cancel</button>
+                  <button type='submit' class='btn btn-danger' >Cancel</button>
                 </form>
               @else
                 <form action="{{route('donated.store')}}" method="post" class="d-inline">
                   @csrf
-                  <input type="hidden" name="name" value="{{$row->donor->user->name}}">
+                  <input type="hidden" name="id" value="{{$row->donor->id}}">
                   <input type="hidden" name="date" value="{{$row->date}}">
-                  <button type='submit' class='btn btn-danger' >Confirm</button>
+                  <button type='submit' class='btn btn-primary' >Confirm</button>
                 </form>
               @endif
               @endif
