@@ -17,9 +17,4 @@ class Donated extends Model
     {
     	return $this->hasMany('App\User');
     }
-
-    // public function donor($value='')
-    // {
-    // 	return $this->hasMany('App\Donor');
-    // }
 }

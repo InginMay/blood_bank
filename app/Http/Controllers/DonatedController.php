@@ -40,7 +40,7 @@ class DonatedController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+         //dd($request);
 
         $request->validate([
             "date"=>'required'
@@ -48,10 +48,6 @@ class DonatedController extends Controller
         $date = date('Y-m-d');
         $id = request('id');
         // dd($id);
-        // $user_id = Booking::find($id);
-        // $donor = Donor::where('user_id',$user_id)->first();
-        // $donor_id = $donor->id;
-        // store data //4
         $donated = new Donated;
         $donated->donor_id = $id;
         $donated->date=$date; 

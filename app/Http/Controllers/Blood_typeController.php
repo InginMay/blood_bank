@@ -45,7 +45,6 @@ class Blood_typeController extends Controller
         $blood_type->name = request('name');
 
         $blood_type->save();
-        $user->assignRole('Admin');
 
         //return redrite
         return redirect()->route('blood_types.index');

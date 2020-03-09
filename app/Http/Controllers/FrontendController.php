@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Donor;
 use App\Township;
+use App\Donated;
 use App\User;
 
 class FrontendController extends Controller
@@ -22,11 +23,7 @@ class FrontendController extends Controller
     {
     	return view('frontend.signin');
     }
-    // public function frontendtemplate($value='')
-    // {
-    //     $donors=Donor::all();
-    //     return view('frontend.booking',compact('donors'));
-    // }
+
     public function Signup($value='')
     {
         $donors=Donor::all();
@@ -42,9 +39,9 @@ class FrontendController extends Controller
     public function donor_detail($id)
     {
         $user = User::find($id);
-     
+        $donated = Donated::find($id);
         
-         return view('frontend.donar_detail',compact('user'));
+         return view('frontend.donar_detail',compact('user','donated'));
     }
 
 }

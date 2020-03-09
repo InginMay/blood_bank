@@ -194,6 +194,6 @@ class DonorController extends Controller
     {
         $donor = Donor::find($id);
         $donor->delete();
-        return redriect()->route('donors.index');
+        return redirect()->route('donors.index');
     }
 }

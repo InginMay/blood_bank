@@ -12,16 +12,16 @@
  <div class="container my-5">
     <h1 class="text-center"><b>သွေးအမျိုးအစား</b></h1>
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-12 my-3">
+      <div class="col-lg-3 col-md-6 col-sm-6 my-3 text-center">
         <img src="{{asset('image/a1.png')}}" width="160" height="260" data-toggle="modal" data-target="#AModel">
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+      <div class="col-lg-3 col-md-6 col-sm-6 my-4 text-center">
         <img src="{{asset('image/b1.png')}}" width="150" height="250" data-toggle="modal" data-target="#BModel">
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+      <div class="col-lg-3 col-md-6 col-sm-6 my-4 text-center">
         <img src="{{asset('image/ab2.png')}}" width="180" height="250" data-toggle="modal" data-target="#ABModel">
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+      <div class="col-lg-3 col-md-6 col-sm-6 my-4 text-center">
         <img src="{{asset('image/o.png')}}" width="150" height="250" data-toggle="modal" data-target="#OModel">
       </div>
     </div>
@@ -30,7 +30,7 @@
 
 <div class="container-fluid my-3">
     <div class="row">
-        <div class="col-md-8 offset-2 card shadow">
+        <div class="col-md-8 offset-2 card shadow mr-5">
             
           <div class="row">
             <div class="col-12 my-5">

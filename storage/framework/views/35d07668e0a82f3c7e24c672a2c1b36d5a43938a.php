@@ -79,19 +79,29 @@
             $date=date('Y-m-d',strtotime($month));
             ?>
           
-          <?php if($auth_date < $now && $now < $month): ?>
-            <li class="nav-item">
-              <button class="btn btn-danger" disabled="disabled" data-target="#bookingModal" data-toggle="modal" disabled="">
-                Booking
-              </button>
-            </li>
+            <?php if($auth_date < $now && $now < $month): ?>
+              <li class="nav-item">
+                <button class="btn btn-danger" disabled="disabled" data-target="#bookingModal" data-toggle="modal" disabled="">
+                  Booking
+                </button>
+              </li>
+
+            <?php else: ?>
+
+             <li class="nav-item">
+                <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
+              </li>
             <?php endif; ?>
-          <?php else: ?>
-            <li class="nav-item">
-              <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
-            </li>
-          <?php endif; ?>
-          
+
+            <?php endif; ?>
+            <?php if(!Auth::user()->donor->donated): ?>
+
+
+              <li class="nav-item">
+                <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
+              </li>
+            <?php endif; ?>
+
           <?php else: ?>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo e(route('signin')); ?>">SignIn</a>
@@ -100,6 +110,7 @@
             <a class="nav-link" href="<?php echo e(route('signup')); ?>">SignUp</a>
           </li>
           <?php endif; ?>
+          
         </ul>
       </div>
     </nav>

@@ -42,7 +42,7 @@
               @if($now < $b_date)
                 <form action="{{route('donated.store')}}" method="post" class="d-inline">
                   @csrf
-                  <input type="hidden" name="name" value="{{$row->donor->user->name}}">
+                  <input type="hidden" name="id" value="{{$row->donor->id}}">
                   <input type="hidden" name="date" value="{{$row->date}}">
                   <button type='submit' class='btn btn-primary'>Confirm</button>
                 </form>

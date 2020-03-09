@@ -25,8 +25,6 @@
                   <td><?php echo e($i++); ?></td>
                   <td><?php echo e($row->name); ?></td>
                   <td>
-                    <a href="<?php echo e(route('townships.show',$row->id)); ?>" class="btn btn-info">
-                    <i class="fas fa-info-circle"></i></a>
                     <a href="<?php echo e(route('townships.edit',$row->id)); ?>" class="btn btn-warning">
                       <i class="fas fa-edit"></i>
                     </a>

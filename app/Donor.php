@@ -32,4 +32,10 @@ class Donor extends Model
     {
         return $this->hasOne('App\Donated');
     }
+
+
+    public function donateds($value='')
+    {
+        return $this->hasMany('App\Donated','donor_id');
+    }
 }

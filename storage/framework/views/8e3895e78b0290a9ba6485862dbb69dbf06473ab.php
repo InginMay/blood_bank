@@ -2,8 +2,8 @@
 
 <div class="container-fluid mt-4">
     <div class="row">
-      <div class="col-12">
-        <img src="<?php echo e(asset('image/signupme.jpg')); ?>" style="width: 500px;height: 500px;margin-left: 300px;">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+        <img src="<?php echo e(asset('image/signupme.jpg')); ?>" style="width: 400px;height: 400px;">
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
 <?php endif; ?> 
 <div class="container my-3">
 	<div class="row ">
-		<div class="col-md-8 offset-2 card shadow">
+		<div class="col-md-8 offset-2 card shadow mr-5">
 			<div class="row">
 				<div class="col-12">
 					<?php if(session('status')): ?>

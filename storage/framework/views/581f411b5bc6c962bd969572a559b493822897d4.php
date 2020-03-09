@@ -41,7 +41,7 @@
               <?php if($now < $b_date): ?>
                 <form action="<?php echo e(route('donated.store')); ?>" method="post" class="d-inline">
                   <?php echo csrf_field(); ?>
-                  <input type="hidden" name="name" value="<?php echo e($row->donor->user->name); ?>">
+                  <input type="hidden" name="id" value="<?php echo e($row->donor->id); ?>">
                   <input type="hidden" name="date" value="<?php echo e($row->date); ?>">
                   <button type='submit' class='btn btn-primary'>Confirm</button>
                 </form>

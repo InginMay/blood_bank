@@ -26,8 +26,6 @@
                   <td>{{$i++}}</td>
                   <td>{{$row->name}}</td>
                   <td>
-                    <a href="{{route('townships.show',$row->id)}}" class="btn btn-info">
-                    <i class="fas fa-info-circle"></i></a>
                     <a href="{{route('townships.edit',$row->id)}}" class="btn btn-warning">
                       <i class="fas fa-edit"></i>
                     </a>

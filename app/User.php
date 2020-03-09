@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Donor');
     }
+
+    public function donated($value='')
+    {
+        return $this->belongsTo('App\Donated');
+    }
 }

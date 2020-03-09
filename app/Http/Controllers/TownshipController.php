@@ -45,7 +45,6 @@ class TownshipController extends Controller
         $township->name = request('name');
 
         $township->save();
-        $user->assignRole('Admin');
 
         //return redrite
         return redirect()->route('townships.index');

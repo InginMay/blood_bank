@@ -78,19 +78,29 @@
             $date=date('Y-m-d',strtotime($month));
             @endphp
           
-          @if($auth_date < $now && $now < $month)
-            <li class="nav-item">
-              <button class="btn btn-danger" disabled="disabled" data-target="#bookingModal" data-toggle="modal" disabled="">
-                Booking
-              </button>
-            </li>
+            @if($auth_date < $now && $now < $month)
+              <li class="nav-item">
+                <button class="btn btn-danger" disabled="disabled" data-target="#bookingModal" data-toggle="modal" disabled="">
+                  Booking
+                </button>
+              </li>
+
+            @else
+
+             <li class="nav-item">
+                <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
+              </li>
             @endif
-          @else
-            <li class="nav-item">
-              <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
-            </li>
-          @endif
-          
+
+            @endif
+            @if(!Auth::user()->donor->donated)
+
+
+              <li class="nav-item">
+                <button class="btn btn-danger" data-target="#bookingModal" data-toggle="modal" >Booking</button>
+              </li>
+            @endif
+
           @else
           <li class="nav-item">
             <a class="nav-link" href="{{route('signin')}}">SignIn</a>
@@ -99,6 +109,7 @@
             <a class="nav-link" href="{{route('signup')}}">SignUp</a>
           </li>
           @endif
+          
         </ul>
       </div>
     </nav>
